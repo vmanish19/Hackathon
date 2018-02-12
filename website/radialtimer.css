@@ -1,0 +1,55 @@
+/* line 10, ../../build/scss/radialtimer.scss */
+.radialtimer {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -100px 0 0 -100px;
+}
+/* line 18, ../../build/scss/radialtimer.scss */
+.radialtimer .n {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: white;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 200px;
+  font-family: "Georgia";
+  font-size: 70px;
+  color: #888888;
+}
+/* line 31, ../../build/scss/radialtimer.scss */
+.radialtimer .slice {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  clip: rect(0px, 200px, 200px, 100px);
+}
+/* line 37, ../../build/scss/radialtimer.scss */
+.radialtimer .slice.nc {
+  clip: rect(auto, auto, auto, auto);
+}
+/* line 41, ../../build/scss/radialtimer.scss */
+.radialtimer .slice .q {
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  border: 16px white solid;
+  border-radius: 50%;
+  clip: rect(0px, 100px, 100px, 0px);
+  z-index: 2;
+}
+/* line 51, ../../build/scss/radialtimer.scss */
+.radialtimer .slice .pie {
+  border: 15px #6bc967 solid;
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  clip: rect(0px, 100px, 200px, 0px);
+  border-radius: 50%;
+  transition: all 1s linear;
+  box-sizing: content-box;
+  z-index: 1;
+}

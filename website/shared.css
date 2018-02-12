@@ -1,0 +1,221 @@
+/* class */
+html, body {
+    max-height: 480px;
+    max-width: 800px;
+}
+
+.bling {
+
+    color:blue;
+}
+
+#buttons {
+    /* float: right; */
+    display: block;
+    margin-right: 0px;
+    margin-left: 800px;
+    /* border: #111 1px solid; */
+}
+#red {
+    background: red;
+  background-image: radial-gradient(brown, transparent);
+  background-size: 5px 5px; 
+  width: 100px;
+  height: 100px;
+  display: block;
+  color: white;
+  border-radius: 50%;
+  border: dotted 2px red;
+  box-shadow: 
+    0 0 20px #111 inset,
+    0 0 10px red;
+}
+
+#red:active {
+    box-shadow: 
+    0 0 5px #111 inset,
+    0 0 2px red;
+}
+
+#yellow{
+  background: yellow;
+  background-image: radial-gradient(orange, transparent);
+  background-size: 5px 5px;
+  color: white;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: block;
+  border: dotted 2px yellow;
+  box-shadow: 
+    0 0 20px #111 inset,
+    0 0 10px yellow;
+}
+
+#yellow:active {
+    box-shadow: 
+    0 0 5px #111 inset,
+    0 0 2px yellow;
+}
+#green{
+    background: green;
+  background-image: radial-gradient(lime, transparent);
+  background-size: 5px 5px;
+  width: 100px;
+  height: 100px;
+  color: white;
+  display: block;
+  border-radius: 50%;
+  border: dotted 2px green;
+  box-shadow: 
+    0 0 20px #111 inset,
+    0 0 10px yellow;
+}
+
+#green:active {
+    box-shadow: 
+    0 0 5px #111 inset,
+    0 0 2px green;
+}
+.playBtn {
+    width: 74px;
+    height: 74px;
+    border-style: solid;
+    border-width: 37px;
+    border-color:green;
+
+    box-sizing: border-box;
+    width: 74px;
+    height: 74px;
+    border-width: 37px 0px 37px 74px;
+
+    border-color: transparent transparent transparent green;
+}
+
+.pauseBtn {
+    width: 74px;
+    height: 74px;
+    border-style: solid;
+    border-width: 37px;
+    border-color: red;
+    border-style: double;
+    border-width: 0px 37px 0px 37px;
+}
+
+.stopBtn {
+    width: 74px;
+    height: 74px;
+    border-style: solid;
+    border-width: 37px;
+    border-color: #202020;
+}
+
+#gif {
+    float: right;
+    width: 400px;
+    height: 300px;
+}
+
+#progressBar {
+    width: 90%;
+    margin: 10px auto;
+    height: 22px;
+    background-color: #0A5F44;
+  }
+  
+  #progressBar div {
+    height: 100%;
+    text-align: right;
+    padding: 0 10px;
+    line-height: 22px; /* same as #progressBar height if we want text middle aligned */
+    width: 0;
+    background-color: #CBEA00;
+    box-sizing: border-box;
+  }
+  
+
+        #piemenu > svg { width: 100%; height: 100%; }
+        #piemenu { height: 800px; width: 800px; margin:auto; position: absolute; left: -400px; top:150 px;}
+        
+        @media (max-width: 400px) { #piemenu { height: 300px; width: 300px; } }
+        
+        [class|=wheelnav-piemenu-slice-basic] { stroke: none;}
+        [class|=wheelnav-piemenu-slice-selected] { fill: red; stroke: none; color: red;}
+        [class|=wheelnav-piemenu-slice-hover] { fill: #497F4C;  stroke: none; fill-opacity: 0.77; cursor: pointer; }
+        
+        [class|=wheelnav-piemenu-title-basic] { fill: #333; stroke: none; }
+        [class|=wheelnav-piemenu-title-selected] { fill:pink; stroke: none; }
+        [class|=wheelnav-piemenu-title-hover] { fill: #222; stroke: none; cursor: pointer; }
+        [class|=wheelnav-piemenu-title] > tspan { font-family: Impact, Charcoal, sans-serif; font-size: 24px; }
+
+/* Radial timer */
+
+@import "compass/css3";
+
+$radialBarColor: #6BC967;
+$timerColor: rgba(255, 255, 255, 0.8);
+$fontColor: #888;
+$fontFamily: "Georgia";
+$backgroundColor: #2f3439;
+$backgroundTimerColor: white;
+$sizeTimer: 200px;
+$borderWidth: 15px;
+$fontSize: 70px;
+
+body {
+  background-color: $backgroundColor;
+}
+
+.radialtimer {
+	width: $sizeTimer;
+	height: $sizeTimer;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -1 * ($sizeTimer / 2) 0 0 -1 * ($sizeTimer / 2);
+
+	.n {
+		position: absolute;
+		width: $sizeTimer;
+		height: $sizeTimer;
+		background: $backgroundTimerColor;
+		border-radius: 50%;
+		text-align: center;
+		line-height: $sizeTimer;
+		font-family: $fontFamily;
+		font-size: $fontSize;
+		color: $fontColor;
+	}
+
+	.slice {
+		position: absolute;
+		width: $sizeTimer;
+		height: $sizeTimer;
+		clip: rect(0px, $sizeTimer, $sizeTimer, ($sizeTimer / 2));
+
+		&.nc {
+			clip: rect(auto, auto, auto, auto);
+		}
+
+		.q {
+			position: absolute;
+			width: ($sizeTimer - $borderWidth * 2);
+			height: ($sizeTimer - $borderWidth * 2);
+			border: ($borderWidth + 1) $backgroundTimerColor solid;
+			border-radius: 50%;
+			clip: rect(0px, ($sizeTimer / 2), ($sizeTimer / 2), 0px);
+			z-index: 2;
+		}
+
+		.pie {
+			border: $borderWidth $radialBarColor solid;
+			position: absolute;
+			width: ($sizeTimer - $borderWidth * 2);
+			height: ($sizeTimer - $borderWidth * 2);
+			clip: rect(0px, ($sizeTimer / 2), $sizeTimer, 0px);
+			border-radius: 50%;
+			transition: all 1s linear;
+			z-index: 1;
+		}
+	}
+}

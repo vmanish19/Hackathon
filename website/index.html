@@ -1,0 +1,51 @@
+<html>
+<head>
+    <title>MemeMixeer</title>
+    <meta charset="utf-8">
+    <link href="shared.css" rel="stylesheet">
+    <link href='radialtimer.css' rel='stylesheet'>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="websocket.js"></script>
+    
+    <script src='radialtimer.js' type='text/javascript'></script>
+    <script src='visualizer.js' type='text/javascript'></script>
+        
+    <script type="text/javascript" src="playerclient.js"></script>
+    <script type="text/javascript" src="wheelnav.min.js"></script>
+    <script type="text/javascript" src="raphael.min.js"></script>
+    <script type="text/javascript" src="raphael.icons.min.js"></script>
+</head>
+<body>
+
+    <div id="selectionMode">
+        <div id='piemenu' data-wheelnav
+            data-wheelnav-slicepath='PieSlice'
+            data-wheelnav-marker data-wheelnav-markerpath='TriangleMarker'
+            data-wheelnav-navangle='0'
+            data-wheelnav-cssmode 
+            data-wheelnav-init>
+        </div>
+
+        <div>
+            <img id ="gif" src="https://media.giphy.com/media/26gsnlYjswkyY3ENq/giphy.gif"/>
+        </div>
+        <!-- <div class="radialtimer" id="timer"></div> -->
+
+    </div>
+    
+    <div id="playerMode">        
+        <div id="player">
+            <button id="play" class="pauseBtn"></button>
+        </div>
+        <audio id="audio"></audio>
+        <canvas
+        style="position: absolute; top: 50%; left: 40%; transform: translate(-50%, -50%);" id="canvas" width="400px" height="200px"></canvas>
+      <div id="buttons">
+          <button id="red">PLAY/PAUSE</button>
+          <button id="yellow">NEXT</button>
+          <button id="green">SELECTION</button>
+      </div>
+    </div>
+</body>
+</html>
+                    
